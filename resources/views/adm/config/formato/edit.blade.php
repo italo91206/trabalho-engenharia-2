@@ -40,6 +40,9 @@
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-secondary">Salvar</button>
+                                <a href="/adm/config/formato">
+                                    <button class="btn btn-danger">Voltar</button>
+                                </a>
                             </div>
                         </form>
                     </div>

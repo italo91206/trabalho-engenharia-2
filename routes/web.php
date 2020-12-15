@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//rotas do adm
 
 Auth::routes();
 
@@ -27,5 +26,11 @@ Route::resource('/adm/config/user', 'UserController')->middleware('auth');
 Route::resource('/adm/config/formato', 'FormatoController')->middleware('auth');
 Route::resource('/adm/config/edicao', 'EdicaoController')->middleware('auth');
 
+
+
 Route::resource('/adm/tools/carta', 'CartaController')->middleware('auth');
-Route::resource('/adm/tools/colecao', 'ColecaoController')->middleware('auth');
+
+Route::get('/adm/tools/torneio/relatorio', 'TorneioController@relatorio')->middleware('auth');
+Route::post('/adm/tools/torneio/encerrar/{id}', 'TorneioController@encerrar')->middleware('auth');
+Route::resource('/adm/tools/torneio', 'TorneioController')->middleware('auth');
+
